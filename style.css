@@ -685,3 +685,96 @@ body {
     .services-display-matrix, .catalogue-flex-grid { grid-template-columns: 1fr; }
     .footer-communication-row-links { flex-direction: column; gap: 16px; }
 }
+
+
+
+/* ==========================================================================
+   DUAL STICKY FIXED MOBILE CONVERSION DOCK STYLES
+   ========================================================================== */
+
+.fixed-mobile-action-dock {
+    position: fixed;
+    bottom: clamp(16px, 3vw, 24px); /* Fluid height placement safe from phone chin bars */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 clamp(16px, 3vw, 24px);
+    pointer-events: none; /* Prevents container box from blocking background clicks */
+    z-index: 2999; /* Higher than header to stay floating on top of everything */
+}
+
+.dock-action-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(52px, 5vw, 60px); /* Fluid circle scaling prevents bulky mobile buttons */
+    height: clamp(52px, 5vw, 60px);
+    border-radius: 50%;
+    color: #FFFFFF ;
+    text-decoration: none;
+    font-size: clamp(20px, 1.8vw, 24px);
+    pointer-events: auto; /* Re-enables clicking on the floating circles */
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+    transition: var(--transition-fluid);
+}
+
+/* Color Calibration Themes matching her brand assets */
+.dock-action-circle.phone-call-shake {
+    background-color: #223087; /* Ahwan Brand Corporate Blue */
+}
+
+.dock-action-circle.whatsapp-chat-pulse {
+    background-color: #25D366; /* Native Conversion Green */
+}
+
+/* Hover scales on desktop viewport frames */
+.dock-action-circle:hover {
+    transform: scale(1.1) translateY(-4px);
+   
+}
+
+/* ==========================================================================
+   ANIMATION KEYFRAMES ENGINE FOR THE FLOATS
+   ========================================================================== */
+
+/* 1. Left Button: Persistent Shaking/Ringing Loop */
+.phone-call-shake {
+    animation: phoneRingingVibration 1.5s ease-in-out infinite;
+}
+
+@keyframes phoneRingingVibration {
+    0%, 100% { transform: rotate(0); }
+    10%, 30%, 50%, 70%, 90% { transform: rotate(-10deg); }
+    20%, 40%, 60%, 80% { transform: rotate(10deg); }
+}
+
+/* 2. Right Button: Constant Pulsing Radar Circle Layer */
+.whatsapp-chat-pulse {
+    animation: floatingGreenRadar 2s infinite ease-in-out;
+}
+
+@keyframes floatingGreenRadar {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5), 0 10px 25px rgba(15, 23, 42, 0.15); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0), 0 10px 25px rgba(15, 23, 42, 0.15); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 10px 25px rgba(15, 23, 42, 0.15); }
+}
+/* ==========================================================================
+   DESKTOP MONITORS HOVER ANIMATION PAUSE MATRIX FIX
+   ========================================================================== */
+
+/* Triggers when a mouse cursor hovers over either fixed circle button on a laptop */
+.dock-action-circle:hover {
+    animation-play-state: paused !important; /* Instantly stops the shaking loop from locking the position */
+    transform: scale(1.15) translateY(-6px) !important; /* Smoothly scales up and lifts the button container box */
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.3) !important; /* Deepens the layout shadow profile on desktop */
+}
+
+/* Color change feedback rules on desktop cursors */
+.dock-action-circle.phone-call-shake:hover {
+    background-color: #1a2566 !important; /* Deepens to an intense high-trust corporate navy blue */
+}
+
+.dock-action-circle.whatsapp-chat-pulse:hover {
+    background-color: #1eb855 !important; /* Deepens to a vibrant active conversation green */
+}
