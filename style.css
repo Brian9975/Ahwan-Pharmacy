@@ -1,0 +1,710 @@
+/* ==========================================================================
+   AHWAN PHARMACY HIGH-READABILITY MAX-CONTRAST DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+    /* ULTRA-READABLE CLINICAL WHITE BACKGROUND ENGINE */
+    --dark-bg: #FFFFFF;          /* Pure white main canvas background */
+    --surface-card: #F1F5F9;     /* Deepened from soft gray to slate-tint gray for card definition */
+    --surface-card-hover: #E2E8F0; /* High-contrast card hover depth layer */
+    --surface-border: #CBD5E1;    /* Darkened borders for razor-sharp grid outlines */
+    
+    /* AHWAN CORPORATE LOGO COLORS MATRIX */
+    --brand-blue: #223087;       /* Exact corporate logo blue for anchors & headers */
+    --brand-green: #8DC63F;      /* Exact corporate logo green for badges & alerts */
+    --whatsapp-brand: #25D366;   /* Pure Safaricom & conversion green marker */
+    
+    /* SYSTEM TYPOGRAPHY VALUE KEYS - DRIVEN FOR HIGH READABILITY */
+    --text-pure: #0F172A;        /* Dense midnight slate black for primary text tags */
+    --text-secondary: #1E293B;   /* Deep charcoal gray for ultra-crisp readable descriptions */
+    
+    --radius-xl: 24px;
+    --radius-lg: 16px;
+    --radius-md: 8px;
+    --transition-fluid: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-pure);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    
+    /* MASTER ACCESSIBILITY SCALE UP */
+    font-size: 18px;             /* Boosted baseline text from 14px to 18px for clear viewing */
+    font-weight: 500;            /* Hardened baseline weight from normal (400) to medium (500) */
+    line-height: 1.7;            /* Generous line tracing height separation for tired eyes */
+}
+
+/* ==========================================================================
+   GLOBAL STRUCTURE ROWS & CONTAINER WRAPPERS
+   ========================================================================== */
+
+.app-viewport-container {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-color: var(--dark-bg);
+}
+
+.content-row-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-spacing {
+    padding: 120px 0;           /* Maximized structural spacing padding for premium breathing room */
+    border-bottom: 2px solid var(--surface-border);
+    background-color: var(--dark-bg);
+}
+
+.center-headline-block {
+    text-align: center;
+    max-width: 800px;           /* Widened layout frame wrapper to support larger fonts */
+    margin: 0 auto 70px auto;
+}
+
+.center-headline-block .mini-tag {
+    font-size: 14px;             /* Scaled up uppercase tag size */
+    font-weight: 800;            /* Dense extra-bold structural presence */
+    color: #558716;              /* Darkened logo green to maintain contrast over white canvas */
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.center-headline-block h2 {
+    font-size: 48px;             /* Dominant section title header scaled up to 48px */
+    font-weight: 800;            /* Thickest font weight setting */
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--brand-blue);    /* Solid Ahwan Corporate Blue core */
+}
+
+/* Responsive override matrix for headers on smaller mobile screen glass viewports */
+@media (max-width: 767px) {
+    .center-headline-block h2 { font-size: 34px !important; }
+    body { font-size: 16px !important; }
+}
+
+/* ==========================================================================
+   TOP NOTIFICATION BAR & FROSTED GLASS NAVIGATION MATRIX
+   ========================================================================== */
+
+.compliance-announcement-strip {
+    background-color: var(--brand-blue); /* Ahwan Blue core */
+    color: #FFFFFF;
+    font-size: 14px;             /* Boosted from 11px for immediate visibility */
+    font-weight: 700;
+    text-align: center;
+    padding: 14px 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.compliance-announcement-strip em {
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 800;
+}
+
+.sticky-desktop-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.98); /* Heavy frosted background to lock high contrast */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 2px solid var(--surface-border);
+    z-index: 2000;
+}
+
+.nav-flex-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;            /* Extra room inside header */
+}
+
+.nav-brand-anchor {
+    font-size: 28px;             /* Large branding layout presence */
+    font-weight: 800;
+    color: var(--brand-blue);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: -0.03em;
+}
+
+.nav-brand-anchor span {
+    color: var(--brand-green);
+}
+
+.nav-links-menu {
+    display: flex;
+    gap: 44px;                  /* Generous link separation channels */
+    align-items: center;
+}
+
+.nav-links-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 15px;             /* Boosted link sizing */
+    font-weight: 800;            /* Heavy text presence weight */
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: var(--transition-fluid);
+}
+
+.nav-links-menu a:hover {
+    color: var(--brand-blue);
+}
+
+.nav-active-status-badge {
+    background: #F1FBF4;         /* High-contrast bright green background fill */
+    border: 2px solid rgba(37, 211, 102, 0.4);
+    color: #155724;              /* Extremely dark green text for clear readability */
+    font-size: 13px;
+    font-weight: 800;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   FIXED LIVE PULSE BEACON DOT ENGINE
+   ========================================================================== */
+
+.pulse-beacon-dot {
+    width: 10px;                 /* Forced exact width in pixels so it never collapses */
+    height: 10px;                /* Forced exact height in pixels to maintain a perfect square shape */
+    background-color: var(--whatsapp-brand); /* Solid Safaricom/WhatsApp Green */
+    border-radius: 50%;          /* Turns the square into a perfect circular dot */
+    position: relative;
+    display: inline-block;       /* Forces the browser to render the shape dimensions natively */
+}
+
+.pulse-beacon-dot::after {
+    content: '';
+    position: absolute;
+    top: 0;                      /* Aligns the pulse animation layer exactly to the top boundary edge */
+    left: 0;                     /* Aligns the pulse animation layer exactly to the left boundary edge */
+    width: 100%;
+    height: 100%;
+    background-color: var(--whatsapp-brand);
+    border-radius: 50%;
+    animation: beaconRadar 2s infinite ease-out; /* Smooth fluid rendering transition flow out */
+}
+
+@keyframes beaconRadar {
+    0% { 
+        transform: scale(1); 
+        opacity: 1; 
+    }
+    100% { 
+        transform: scale(3.5);   /* Expands the green circular radar bubble outwards */
+        opacity: 0;              /* Fades the radar line completely into transparency */
+    }
+}
+/* ==========================================================================
+   DESKTOP DUAL-PANEL RESPONSIVE HERO SECTOR
+   ========================================================================== */
+
+.hero-view-container {
+    padding: 120px 0;
+    background: radial-gradient(40% 40% at 100% 0%, rgba(141, 198, 63, 0.06) 0%, rgba(255, 255, 255, 0) 100%), var(--dark-bg);
+    border-bottom: 2px solid var(--surface-border);
+}
+
+.hero-split-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.hero-message-panel {
+    text-align: left;
+}
+
+.hero-micro-tag {
+    font-size: 14px;
+    font-weight: 800;
+    color: #558716;              /* Heavy contrast brand green */
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.hero-main-title {
+    font-size: 64px;             /* Extra dominant desktop header title */
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--brand-blue);    /* Core Ahwan Blue heading */
+    margin-bottom: 28px;
+}
+
+.hero-main-title span {
+    color: var(--text-pure);
+}
+
+.hero-main-title em {
+    font-style: normal;
+    color: #619e13;              /* Deepened green accent for maximum text contrast */
+}
+
+.hero-body-description {
+    font-size: 20px;             /* Highly readable large copy paragraph */
+    color: var(--text-secondary); /* Dark charcoal tint */
+    line-height: 1.7;
+    margin-bottom: 48px;
+    max-width: 580px;
+}
+
+.master-action-wa-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background-color: var(--whatsapp-brand);
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 24px 44px;         /* Massive, thick actionable button layout click matrix */
+    border-radius: var(--radius-lg);
+    font-weight: 800;
+    font-size: 20px;             /* Large action text */
+    width: 100%;
+    max-width: 540px;
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.35);
+    transition: var(--transition-fluid);
+}
+
+.master-action-wa-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px rgba(37, 211, 102, 0.5);
+    background-color: #1eb855;
+}
+
+.master-action-wa-button i {
+    font-size: 26px;
+}
+
+.cta-verification-note {
+    display: block;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+}
+
+.hero-display-box {
+    width: 100%;
+    height: 520px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 2px solid var(--surface-border);
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
+}
+
+.hero-display-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   BRIGHT CORE SERVICES GRID SECTOR
+   ========================================================================== */
+
+.services-display-matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.service-display-node, .premium-product-box-card {
+    background-color: var(--surface-card); /* Strong solid slate-tint gray card backdrop */
+    border: 2px solid var(--surface-border); /* Razor sharp dark grey card boundaries */
+    border-radius: var(--radius-xl);
+    padding: 48px 40px;         /* Maximized spatial card padding layout channels */
+    text-align: left;
+    transition: var(--transition-fluid);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* HIGH-VALUE ACCENT CARD HOVER ACTION */
+.service-display-node:hover, .premium-product-box-card:hover {
+    border-color: var(--brand-blue); /* Solid Ahwan Blue borders reveal */
+    background-color: #FFFFFF;  /* Cards clear instantly to clean white on cursor path */
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(34, 48, 135, 0.08);
+}
+
+.service-display-node i {
+    font-size: 42px;             /* Large visual vector icon markers */
+    color: var(--brand-blue);    /* Bold corporate blue applied directly */
+    margin-bottom: 28px;
+    display: block;
+}
+
+.service-display-node h3, .product-title-string {
+    font-size: 26px;             /* Thick, dark, highly readable card headers */
+    font-weight: 800;
+    color: var(--text-pure);     /* Midnight black core */
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+}
+
+.service-display-node p {
+    font-size: 16px;             /* Large description size inside cards */
+    color: var(--text-secondary); /* Solid charcoal text fill */
+    line-height: 1.7;
+    font-weight: 600;            /* Thickened text copy profile weight */
+}
+/* ==========================================================================
+   PRODUCT RANGE GRID HUB STYLING LAYOUT - TYPOGRAPHY MAXIMIZED
+   ========================================================================== */
+
+.catalogue-flex-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Clean desktop dual-column matrix grid layout */
+    gap: 36px;                  /* Generous space channel padding between range blocks */
+}
+
+.product-image-container-box {
+    width: 100%;
+    height: 260px;              /* Extended showcase photo viewport height profile */
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 24px;
+    border: 2px solid var(--surface-border);
+}
+
+.product-image-container-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-title-string {
+    font-size: 26px;             /* Boosted range title size to match services section */
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    color: var(--brand-blue);    /* Primary Ahwan Blue headers */
+}
+
+.premium-product-box-card p {
+    font-size: 16px;             /* Large copy text size inside description wrapper fields */
+    color: var(--text-secondary); /* Dark charcoal tint */
+    line-height: 1.7;
+    font-weight: 600;            /* Heavy text tracing profile weight */
+    margin-bottom: 24px;
+}
+
+/* HIGH-CONTRAST INTERACTIVE DYNAMIC PRODUCT ACTION BUTTONS */
+.product-wa-action-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background-color: #FFFFFF;
+    border: 3px solid var(--brand-blue); /* Solid 3px brand blue button framework border */
+    color: var(--brand-blue);
+    text-decoration: none;
+    padding: 18px 28px;         /* Maximized button block clicking surface mass padding */
+    border-radius: var(--radius-lg);
+    font-size: 16px;             /* Large bold uppercase trigger font labels */
+    font-weight: 800;            /* Solid structural tracking text weight settings */
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    width: 100%;
+    transition: var(--transition-fluid);
+    margin-top: auto;           /* Forces buttons to snap uniformly to bottom line boundaries */
+}
+
+.product-wa-action-trigger i {
+    color: var(--whatsapp-brand);
+    font-size: 20px;
+}
+
+/* Complete inversion of structural variables upon cursor hover state events */
+.product-wa-action-trigger:hover {
+    background-color: var(--brand-blue); /* Fills button container box with pure corporate blue */
+    color: #FFFFFF;
+    border-color: var(--brand-blue);
+    box-shadow: 0 12px 30px rgba(34, 48, 135, 0.25);
+}
+
+.product-wa-action-trigger:hover i {
+    color: #FFFFFF;             /* Shifts nested vector brand logo icon straight to clean white */
+}
+
+/* ==========================================================================
+   M-PESA EXPRESS BANNER ROW - TYPOGRAPHY MAXIMIZED
+   ========================================================================== */
+
+.mpesa-integration-card-row {
+    background: linear-gradient(135deg, #E6F7ED 0%, #FFFFFF 100%); /* Deepened high-contrast green fill background */
+    border: 2px solid rgba(37, 211, 102, 0.4); /* Stronger verification border mapping lines */
+    border-radius: var(--radius-xl);
+    padding: 64px 56px;         /* Expanded cushion pads for layout density presence */
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 56px;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(37, 211, 102, 0.06);
+}
+
+.mpesa-integration-card-row h2 {
+    font-size: 42px;             /* Large section title headline text scaled up to 42px */
+    font-weight: 800;
+    color: var(--brand-blue);    /* Solid corporate blue grounding */
+    margin-bottom: 16px;
+}
+
+.mpesa-integration-card-row p {
+    font-size: 18px;             /* Large readable transaction description text copy */
+    color: var(--text-secondary); /* High-contrast charcoal text fill */
+    line-height: 1.7;
+    font-weight: 600;
+}
+
+.till-display-panel-wrapper {
+    background-color: #FFFFFF;
+    border: 3px solid #25D366;   /* Reinforced 3px solid Safaricom merchant green border links */
+    border-radius: var(--radius-lg);
+    padding: 36px 24px;         /* Expanded interior pad spacing around numeric strings */
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+}
+
+.till-display-panel-wrapper span {
+    font-size: 14px;             /* Crisp uppercase description tracker string size */
+    color: var(--text-secondary);
+    font-weight: 800;            /* Extra heavy bold presence */
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.till-display-panel-wrapper .till-numeric-output {
+    font-size: 56px;             /* Massive numeric till code font text string output */
+    font-weight: 900;            /* Extreme text block structural visibility emphasis */
+    color: #1eb855;              /* Darkened merchant green light tint for absolute white-mode contrast */
+    letter-spacing: 0.05em;
+    line-height: 1;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ==========================================================================
+   CORPORATE FOOTER CLOUD INTERFACE BASE SYSTEM
+   ========================================================================== */
+
+.clinical-platform-footer {
+    background-color: #0F172A;   /* Clean grounding dark slate canvas base contrast remains */
+    color: #94A3B8;
+    padding: 100px 0 50px 0;    /* Expanded cushion boundary padding */
+    text-align: center;
+    font-size: 16px;             /* Scaled default description text copy base */
+    font-weight: 500;
+}
+
+.footer-brand-header {
+    font-size: 36px;             /* Large structural brand title text scale */
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 14px;
+    letter-spacing: -0.03em;
+}
+
+.footer-brand-header span {
+    color: var(--brand-green);   /* Targets active Ahwan Brand Green */
+}
+
+.footer-communication-row-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 44px;                  /* Expanded channel paths separation channels space */
+    margin: 40px 0;
+}
+
+.footer-communication-row-links a {
+    color: #CBD5E1;
+    text-decoration: none;
+    font-size: 18px;             /* Boosted communication call string values link sizes */
+    font-weight: 700;
+    transition: var(--transition-fluid);
+}
+
+.footer-communication-row-links a:hover {
+    color: #FFFFFF;
+}
+
+.footer-legal-regulatory-disclaimer {
+    font-size: 13px;             /* Scaled regulatory description text copy size */
+    color: #64748B;
+    max-width: 700px;
+    margin: 36px auto 0 auto;
+    line-height: 1.7;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 24px;
+}
+
+.footer-serverless-handshaking-badge {
+    font-size: 11px;
+    color: #475569;
+    margin-top: 50px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   FLUID GRAPHIC INTERFACE RESPONSIVENESS MATRICES ENGINE - OVERRIDES
+   ========================================================================== */
+
+@media (max-width: 991px) {
+    .hero-split-grid { grid-template-columns: 1fr; text-align: center; gap: 48px; }
+    .hero-message-panel { text-align: center; }
+    .hero-main-title { font-size: 46px !important; }
+    .hero-body-description { margin: 0 auto 36px auto; font-size: 16px !important; }
+    .master-action-wa-button { font-size: 18px !important; padding: 20px 36px !important; }
+    .catalogue-flex-grid { grid-template-columns: 1fr; gap: 28px; } /* Safely stacks cards on small phone screens */
+    .service-display-node, .premium-product-box-card { padding: 36px 28px !important; }
+    .service-display-node h3, .product-title-string { font-size: 22px !important; }
+    .mpesa-integration-card-row { grid-template-columns: 1fr; text-align: center; gap: 36px; padding: 44px 24px; }
+    .mpesa-integration-card-row h2 { font-size: 32px !important; }
+    .till-display-panel-wrapper .till-numeric-output { font-size: 44px !important; }
+}
+
+@media (max-width: 767px) {
+    .services-display-matrix { grid-template-columns: 1fr; gap: 24px; }
+    .section-spacing { padding: 80px 0; }
+    .footer-communication-row-links { flex-direction: column; gap: 24px; }
+}
+/* ==========================================================================
+   LIVE PULSE ANIMATIONS ENGINE
+   ========================================================================== */
+
+/* ==========================================================================
+   SMART MOBILE HAMBURGER MENU LAYOUT STYLES
+   ========================================================================== */
+
+.hamburger-menu-trigger {
+    display: none; /* Hidden on desktop screens by default */
+    background: none;
+    border: 2px solid var(--surface-border);
+    color: var(--brand-blue);
+    font-size: 22px;
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-fluid);
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger-menu-trigger:hover {
+    background-color: var(--surface-card);
+    border-color: var(--brand-blue);
+}
+
+.mobile-navigation-drawer {
+    display: none; /* Controlled dynamically by JavaScript toggle states */
+    background-color: #FFFFFF;
+    border-top: 1px solid var(--surface-border);
+    border-bottom: 2px solid var(--brand-blue);
+    padding: 20px 24px;
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 15px 30px rgba(15, 23, 42, 0.05);
+    z-index: 1999;
+}
+
+.drawer-link-node {
+    display: block;
+    color: var(--text-pure);
+    text-decoration: none;
+    font-size: 18px; /* High-readability scaled mobile fonts */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--surface-border);
+    transition: var(--transition-fluid);
+}
+
+.drawer-link-node:last-child {
+    border-bottom: none;
+}
+
+.drawer-link-node:hover {
+    color: var(--brand-green);
+    padding-left: 8px;
+}
+
+.pharmacy-logo {
+    width: 250px;
+    height: 70px;
+}
+/* ==========================================================================
+   RESPONSIVE OVERRIDES ENGINE - COUPLING NAV SECTORS
+   ========================================================================== */
+
+@media (max-width: 991px) {
+    .nav-links-menu { 
+        display: none !important; /* Safely strips the horizontal navigation text links */
+    }
+    .hamburger-menu-trigger { 
+        display: inline-flex; /* Activates the hamburger trigger box button interface */
+    }
+    .mobile-navigation-drawer.is-active {
+        display: flex; /* Reveals the mobile layout container menu block upon toggle interaction */
+    }
+    .compliance-announcement-strip{
+        font-size: 12px;
+    }
+    .pharmacy-logo {
+    width: 150px;
+    height: 50px;
+}
+.nav-active-status-badge{
+    font-size: 10px;
+    padding: 10px 15px;
+}
+}
