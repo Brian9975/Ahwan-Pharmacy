@@ -677,8 +677,21 @@ body {
 .master-action-wa-button{
     font-size: 15px;
     max-width: max-content;
+
+}
+.compliance-announcement-strip{
+    font-size: 10px;
+}
+.footer-brand-header{
+    font-size: 20px;
+}
+.footer-logo {
+    width: 50px !important;
 }
 
+.drawer-link-node{
+    font-size: 13px;
+}
 }
 
 @media (max-width: 500px) {
