@@ -811,6 +811,7 @@ body {
     font-weight: 600;
     z-index: 10;
     transition: all;
+    border: 0;
 }
 
 .order-now-btn a {
