@@ -791,3 +791,32 @@ body {
 .dock-action-circle.whatsapp-chat-pulse:hover {
     background-color: #1eb855 !important; /* Deepens to a vibrant active conversation green */
 }
+
+
+
+.order-btn-holder {
+    position: sticky;
+    top: 80px;
+    right: 0;
+}
+
+.order-now-btn {
+    background: var(--brand-blue);
+    color: white;
+    cursor: pointer;
+    font-size: large;
+    padding: 8px 10px;
+    margin: 15px;
+    border-radius: 30px;
+    font-weight: 600;
+    z-index: 10;
+    transition: all;
+}
+
+.order-now-btn a {
+ text-decoration: none;
+ color: white;
+}
+.order-now-btn:hover {
+    transform: scale(1.1);
+}
